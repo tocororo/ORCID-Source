@@ -15,9 +15,7 @@
 			<column name="reported_date" type="TIMESTAMP WITH TIME ZONE" />		
 			<column name="source_type" type="VARCHAR(20)" />
 			<column name="reporter_ip" type="VARCHAR(60)" />
-			<column name="count" type="INT" />			
-			<column name="date_created" type="TIMESTAMP WITH TIME ZONE" />			
-			<column name="last_modified" type="TIMESTAMP WITH TIME ZONE" />			
+			<column name="count" type="INT" />
 		</createTable>
 		<addForeignKeyConstraint constraintName="spam_orcid_fk" baseTableName="spam" baseColumnNames="orcid" referencedTableName="profile" referencedColumnNames="orcid" />
 	</changeSet>

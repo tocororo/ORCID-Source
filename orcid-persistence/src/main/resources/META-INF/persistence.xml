@@ -91,7 +91,7 @@
 		<class>org.orcid.persistence.jpa.entities.MemberOBOWhitelistedClientEntity</class>
 		<class>org.orcid.persistence.jpa.entities.InvalidIssnGroupIdRecordEntity</class>		
 				
-		
+		<class>org.orcid.persistence.jpa.entities.SpamEntity</class>
 		<exclude-unlisted-classes>true</exclude-unlisted-classes>
 
 <!--         <properties> -->
