@@ -6,7 +6,7 @@ public interface SpamDao {
 
 	Boolean exists(String orcid);
 
-	Boolean create(String orcid, String sourceType, String reporterIp);
+	SpamEntity create(String orcid, String sourceType, String reporterIp);
 
 	Boolean incrementCount(String orcid);
 

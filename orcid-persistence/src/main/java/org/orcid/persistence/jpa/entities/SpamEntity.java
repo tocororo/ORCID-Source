@@ -3,6 +3,7 @@ package org.orcid.persistence.jpa.entities;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
@@ -15,6 +16,7 @@ public class SpamEntity {
 	private String reporterIp;
 	private Date reportedDate;
 
+	@Id
 	public String getOrcid() {
 		return orcid;
 	}
