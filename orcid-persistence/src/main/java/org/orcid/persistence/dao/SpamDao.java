@@ -4,13 +4,13 @@ import org.orcid.persistence.jpa.entities.SpamEntity;
 
 public interface SpamDao {
 
-	Boolean exists(String orcid);
+    Boolean exists(String orcid);
 
-	SpamEntity create(String orcid, String sourceType, String reporterIp);
+    SpamEntity create(String orcid, String sourceType, String reporterIp);
 
-	Boolean incrementCount(String orcid);
+    Boolean incrementCount(String orcid);
 
-	Boolean remove(String orcid);
+    Boolean remove(String orcid);
 
-	SpamEntity get(String orcid);
+    SpamEntity get(String orcid);
 }
