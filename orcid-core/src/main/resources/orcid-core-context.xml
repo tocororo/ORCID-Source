@@ -387,6 +387,8 @@
 	
 	<bean id="recordCorrectionsManagerReadOnly" class="org.orcid.core.manager.read_only.impl.RecordCorrectionsManagerReadOnlyImpl" />
 	
+	<bean id="spamManager" class="org.orcid.core.common.manager.impl.SpamManagerImpl" />
+	
 	<!-- Utilities -->
 	<bean id="contributorUtils" class="org.orcid.core.utils.ContributorUtils">
 		<property name="profileEntityCacheManager" ref="profileEntityCacheManager" />

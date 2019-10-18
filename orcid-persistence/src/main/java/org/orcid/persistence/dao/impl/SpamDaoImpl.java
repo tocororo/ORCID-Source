@@ -15,6 +15,10 @@ public class SpamDaoImpl implements SpamDao {
     @Resource(name = "entityManager")
     protected EntityManager entityManager;
 
+    public void setEntityManager(EntityManager entityManager) {
+        this.entityManager = entityManager;
+    }
+    
     @Override
     public Boolean exists(String orcid) {
         TypedQuery<Long> query = entityManager.createQuery("SELECT count(e.orcid) FROM SpamEntity e WHERE e.orcid=:orcid", Long.class);

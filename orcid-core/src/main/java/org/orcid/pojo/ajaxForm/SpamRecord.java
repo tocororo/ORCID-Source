@@ -1,27 +1,21 @@
-package org.orcid.persistence.jpa.entities;
+package org.orcid.pojo.ajaxForm;
 
+import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
-@Entity
-@Table(name = "work")
-public class SpamEntity {
-
-    private String orcid;
+public class SpamRecord implements Serializable {
+    private static final long serialVersionUID = -3804287919129012252L;
+    private Text orcid;
     private Integer count;
     private String sourceType;
     private String reporterIp;
     private Date reportedDate;
 
-    @Id
-    public String getOrcid() {
+    public Text getOrcid() {
         return orcid;
     }
 
-    public void setOrcid(String orcid) {
+    public void setOrcid(Text orcid) {
         this.orcid = orcid;
     }
 
