@@ -379,8 +379,10 @@ function checkOrcidLoggedIn() {
                 logAjaxError(e);
                 // for some slow OAuth code redirects this is hit while 
                 // people are signing in. Ingore if singing in.
-                if (!signinLocked)
-                     window.location.reload(true);
+                if (!signinLocked) {
+                    document.cookie = "XSRF-TOKEN=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                    window.location.reload(true);
+                }                     
             });            
         }
     }
