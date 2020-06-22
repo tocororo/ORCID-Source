@@ -71,4 +71,5 @@ public class OrcidOauth2Constants {
     public static final String SOCIAL_SESSION_ATT_NAME = "social_data_";
     public static final String FACEBOOK = "facebook";
     public static final String GOOGLE = "google";
+    // TODO: Add here a ORCID sign in type!!! or specific variables??
 }

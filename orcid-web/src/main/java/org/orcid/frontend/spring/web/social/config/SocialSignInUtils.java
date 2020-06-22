@@ -62,31 +62,31 @@ public class SocialSignInUtils {
         String googleTokenEndpoint = "https://www.googleapis.com/oauth2/v4/token";
         String googleUserInfoEndpoint = null;
         // Find google token endpoint
-        HttpURLConnection con = (HttpURLConnection) new URL("https://accounts.google.com/.well-known/openid-configuration").openConnection();
-        con.setRequestProperty("User-Agent", con.getRequestProperty("User-Agent") + " (orcid.org)");
-        con.setRequestMethod("GET");
-        int responseCode = con.getResponseCode();
-        if (responseCode == HttpURLConnection.HTTP_OK) {
-            BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream(), StandardCharsets.UTF_8.name()));
-            StringBuffer accessTokenResponse = new StringBuffer();
-            in.lines().forEach(i -> accessTokenResponse.append(i));
-            in.close();
-            // Read JSON response and print
-            JSONObject googleConfig = new JSONObject(accessTokenResponse.toString());
-            if (googleConfig.has("token_endpoint")) {
-                googleTokenEndpoint = googleConfig.getString("token_endpoint");
-            } else {
-                // Use not recommended default token endpoint
-                LOGGER.warn("Unable to fetch google token endpoing, using default one");
-            }
+        // HttpURLConnection con = (HttpURLConnection) new URL("https://accounts.google.com/.well-known/openid-configuration").openConnection();
+        // con.setRequestProperty("User-Agent", con.getRequestProperty("User-Agent") + " (orcid.org)");
+        // con.setRequestMethod("GET");
+        // int responseCode = con.getResponseCode();
+        // if (responseCode == HttpURLConnection.HTTP_OK) {
+        //     BufferedReader in = new BufferedReader(new InputStreamReader(con.getInputStream(), StandardCharsets.UTF_8.name()));
+        //     StringBuffer accessTokenResponse = new StringBuffer();
+        //     in.lines().forEach(i -> accessTokenResponse.append(i));
+        //     in.close();
+        //     // Read JSON response and print
+        //     JSONObject googleConfig = new JSONObject(accessTokenResponse.toString());
+        //     if (googleConfig.has("token_endpoint")) {
+        //         googleTokenEndpoint = googleConfig.getString("token_endpoint");
+        //     } else {
+        //         // Use not recommended default token endpoint
+        //         LOGGER.warn("Unable to fetch google token endpoing, using default one");
+        //     }
 
-            if (googleConfig.has("userinfo_endpoint")) {
-                googleUserInfoEndpoint = googleConfig.getString("userinfo_endpoint");
-            }
-        } else {
-            // Use not recommended default token endpoint
-            LOGGER.warn("Unable to fetch google token endpoing, using default one");
-        }
+        //     if (googleConfig.has("userinfo_endpoint")) {
+        //         googleUserInfoEndpoint = googleConfig.getString("userinfo_endpoint");
+        //     }
+        // } else {
+        //     // Use not recommended default token endpoint
+        //     LOGGER.warn("Unable to fetch google token endpoing, using default one");
+        // }
 
         googleOauthUrl = "https://accounts.google.com/o/oauth2/v2/auth?client_id=" + gKey + "&response_type=code&scope=openid%20email%20profile&redirect_uri="
                 + googleRedirectUrl + "&state={state_param}";
