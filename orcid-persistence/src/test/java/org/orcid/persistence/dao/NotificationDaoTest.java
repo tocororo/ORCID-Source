@@ -32,6 +32,7 @@ import org.orcid.persistence.jpa.entities.NotificationItemEntity;
 import org.orcid.persistence.jpa.entities.ProfileEntity;
 import org.orcid.test.DBUnitTest;
 import org.orcid.test.OrcidJUnit4ClassRunner;
+import org.orcid.utils.DateFieldsOnBaseEntityUtils;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -98,27 +99,6 @@ public class NotificationDaoTest extends DBUnitTest {
     }
 
     @Test
-    public void testFindRecordsWithUnsentNotificationsLegacy() {
-        ProfileEntity p1 = profileDao.find("0000-0000-0000-0002");
-        ProfileEntity p2 = profileDao.find("4444-4444-4444-4441");
-
-        List<Object[]> recordsWithNotificationsToSend = notificationDao.findRecordsWithUnsentNotificationsLegacy();
-        assertEquals(2, recordsWithNotificationsToSend.size());
-        Object[] e0 = recordsWithNotificationsToSend.get(0);
-        Object[] e1 = recordsWithNotificationsToSend.get(1);
-
-        assertEquals("0000-0000-0000-0002", e0[0]);
-        assertEquals("0.0", String.valueOf(e0[1]));
-        Timestamp e0TS = (Timestamp) e0[2];
-        assertEquals(p1.getCompletedDate().getTime(), e0TS.getTime());
-
-        assertEquals("4444-4444-4444-4441", e1[0]);
-        assertEquals("7.0", String.valueOf(e1[1]));
-        Timestamp e1TS = (Timestamp) e1[2];
-        assertEquals(p2.getCompletedDate().getTime(), e1TS.getTime());
-    }
-
-    @Test
     public void testFindNotificationsToSendLegacy() {
         String orcid1 = "0000-0000-0000-0004";
         ProfileEntity p1 = profileDao.find("0000-0000-0000-0004");
@@ -128,14 +108,16 @@ public class NotificationDaoTest extends DBUnitTest {
         Float HSQLDB_MAX_FLOAT = Float.valueOf(NumberType.MAX_INT.intValue() - 64);
         ArrayList<Long> ids = new ArrayList<Long>();
         // Setup notifications: never sent any
-        ids.add(createNotifiation(orcid1, null));
-        ids.add(createNotifiation(orcid1, null));
-        ids.add(createNotifiation(orcid1, null));
+        ids.add(createNotification(orcid1, null));
+        ids.add(createNotification(orcid1, null));
+        ids.add(createNotification(orcid1, null));
 
         List<NotificationEntity> notificationsToSend = notificationDao.findNotificationsToSendLegacy(new Date(), orcid1, FREQUENCY_IMMEDIATELY, date);
         assertNotNull(notificationsToSend);
         assertEquals(3, notificationsToSend.size());
         for (NotificationEntity e : notificationsToSend) {
+            assertNotNull(e.getDateCreated());
+            assertNotNull(e.getLastModified());
             assertTrue(ids.contains(e.getId()));
         }
 
@@ -143,6 +125,8 @@ public class NotificationDaoTest extends DBUnitTest {
         assertNotNull(notificationsToSend);
         assertEquals(3, notificationsToSend.size());
         for (NotificationEntity e : notificationsToSend) {
+            assertNotNull(e.getDateCreated());
+            assertNotNull(e.getLastModified());
             assertTrue(ids.contains(e.getId()));
         }
 
@@ -150,6 +134,8 @@ public class NotificationDaoTest extends DBUnitTest {
         assertNotNull(notificationsToSend);
         assertEquals(3, notificationsToSend.size());
         for (NotificationEntity e : notificationsToSend) {
+            assertNotNull(e.getDateCreated());
+            assertNotNull(e.getLastModified());
             assertTrue(ids.contains(e.getId()));
         }
 
@@ -175,9 +161,9 @@ public class NotificationDaoTest extends DBUnitTest {
         // Setup notifications
         Calendar calendar = Calendar.getInstance(); // this would default to now
         calendar.add(Calendar.MONTH, -1);
-        ids.add(createNotifiation(orcid1, calendar.getTime()));
-        ids.add(createNotifiation(orcid1, null));
-        ids.add(createNotifiation(orcid1, null));
+        ids.add(createNotification(orcid1, calendar.getTime()));
+        ids.add(createNotification(orcid1, null));
+        ids.add(createNotification(orcid1, null));
 
         notificationsToSend = notificationDao.findNotificationsToSendLegacy(new Date(), orcid1, FREQUENCY_IMMEDIATELY, date);
         assertNotNull(notificationsToSend);
@@ -220,9 +206,9 @@ public class NotificationDaoTest extends DBUnitTest {
         // Setup notifications
         calendar = Calendar.getInstance(); // this would default to now
         calendar.add(Calendar.DAY_OF_YEAR, -6);
-        ids.add(createNotifiation(orcid1, calendar.getTime()));
-        ids.add(createNotifiation(orcid1, null));
-        ids.add(createNotifiation(orcid1, null));
+        ids.add(createNotification(orcid1, calendar.getTime()));
+        ids.add(createNotification(orcid1, null));
+        ids.add(createNotification(orcid1, null));
 
         notificationsToSend = notificationDao.findNotificationsToSendLegacy(new Date(), orcid1, FREQUENCY_IMMEDIATELY, date);
         assertNotNull(notificationsToSend);
@@ -259,9 +245,8 @@ public class NotificationDaoTest extends DBUnitTest {
 
     }
 
-    private Long createNotifiation(String orcid, Date sentDate) {
+    private Long createNotification(String orcid, Date sentDate) {
         NotificationEntity entity = new NotificationAddItemsEntity();
-        entity.setDateCreated(new Date());
         entity.setNotificationIntro("intro");
         entity.setNotificationSubject("subject");
         entity.setNotificationType(NOTIFICATION_TYPE_AMENDED);
@@ -295,17 +280,16 @@ public class NotificationDaoTest extends DBUnitTest {
     }
 
     @Test
-    public void testFindLatestByOrcid() {
+    public void testFindLatestByOrcid() throws IllegalAccessException {
         NotificationEntity entity = notificationDao.findLatestByOrcid("0000-0000-0000-0004");
         assertNull(entity);
         Long lastId = null;
         for (int i = 0; i < 5; i++) {
             Date now = new Date();
             NotificationAmendedEntity newEntity = new NotificationAmendedEntity();
+            DateFieldsOnBaseEntityUtils.setDateFields(newEntity, now);
             newEntity.setAmendedSection(AMENDED_SECTION_UNKNOWN);
             newEntity.setClientSourceId("APP-6666666666666666");
-            newEntity.setDateCreated(now);
-            newEntity.setLastModified(now);
             newEntity.setNotificationIntro("Intro");
             newEntity.setNotificationSubject("Subject");
             newEntity.setNotificationType(NOTIFICATION_TYPE_AMENDED);
@@ -315,6 +299,8 @@ public class NotificationDaoTest extends DBUnitTest {
 
             NotificationEntity freshFromDB = notificationDao.findLatestByOrcid("0000-0000-0000-0004");
             assertNotNull(freshFromDB);
+            assertNotNull(freshFromDB.getDateCreated());
+            assertNotNull(freshFromDB.getLastModified());
             if (lastId == null) {
                 lastId = freshFromDB.getId();
             } else {
@@ -575,5 +561,41 @@ public class NotificationDaoTest extends DBUnitTest {
         assertEquals(3, count2);
         assertTrue(found3);
         assertEquals(1, count3);        
+    }
+    
+    @Test
+    public void mergeTest() {
+        NotificationEntity e = notificationDao.find(14L);
+        e.setActionedDate(new Date());
+        Date dateCreated = e.getDateCreated();
+        Date lastModified = e.getLastModified();
+        notificationDao.merge(e);
+
+        NotificationEntity updated = notificationDao.find(14L);
+        assertEquals(dateCreated, updated.getDateCreated());
+        assertTrue(updated.getLastModified().after(lastModified));
+    }
+    
+    @Test
+    public void persistTest() {
+        NotificationEntity e = new NotificationAmendedEntity();
+        e.setProfile(new ProfileEntity("0000-0000-0000-0003")); 
+        e.setNotificationFamily("FAMILY");
+        e.setNotificationIntro("INTRO");
+        e.setNotificationSubject("SUBJECT");
+        e.setNotificationType("AMENDED");
+        
+        notificationDao.persist(e);
+        assertNotNull(e.getId());
+        assertNotNull(e.getDateCreated());
+        assertNotNull(e.getLastModified());
+        assertEquals(e.getDateCreated(), e.getLastModified());
+        
+        NotificationEntity e2 = notificationDao.find(e.getId());
+        assertNotNull(e2.getDateCreated());
+        assertNotNull(e2.getLastModified());
+        assertEquals(e.getLastModified(), e2.getLastModified());
+        assertEquals(e.getDateCreated(), e2.getDateCreated());
+        assertEquals(e2.getDateCreated(), e2.getLastModified());
     }
 }

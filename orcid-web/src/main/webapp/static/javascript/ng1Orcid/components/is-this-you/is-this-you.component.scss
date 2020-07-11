@@ -1,0 +1,68 @@
+.non-fixed {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  flex-grow: 1;
+  margin-bottom: 30px;
+}
+
+.ie {
+  :host {
+    .non-fixed {
+      // Fix IE overlap issue https://trello.com/c/aUfId6QM/6545-is-this-you-modal-ui-issues
+      display: block;
+    }
+  }
+}
+
+.fixed {
+  display: flex;
+  justify-content: flex-end;
+  flex-shrink: 0;
+}
+
+.modal-title {
+  margin: 0;
+}
+
+table {
+  text-align: left;
+  th {
+    white-space: nowrap;
+  }
+  .affiliation-colum {
+    width: 280px;
+  }
+}
+th,
+td {
+  border-bottom: 1px solid #ddd;
+  vertical-align: baseline;
+}
+th,
+td {
+  padding-right: 10px;
+}
+
+.container {
+  max-height: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.buttonsColumn {
+  padding-left: 16px;
+  width: 1px;
+}
+
+:host.columns-8,
+:host.columns-4 {
+  .fixed {
+    flex-direction: column;
+  }
+}
