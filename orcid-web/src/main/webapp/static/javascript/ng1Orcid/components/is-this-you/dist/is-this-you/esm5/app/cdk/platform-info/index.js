@@ -1,0 +1,7 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { PlatformInfoModule } from '@bit/orcid.angular.platform-info';
+export { PlatformInfoModule };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9AYml0L29yY2lkLmFuZ3VsYXIuaXMtdGhpcy15b3UvIiwic291cmNlcyI6WyJhcHAvY2RrL3BsYXRmb3JtLWluZm8vaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sRUFBRSxrQkFBa0IsRUFBRSxNQUFNLGtDQUFrQyxDQUFDO0FBQ3RFLE9BQU8sRUFBRSxrQkFBa0IsRUFBRSxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgUGxhdGZvcm1JbmZvTW9kdWxlIH0gZnJvbSAnQGJpdC9vcmNpZC5hbmd1bGFyLnBsYXRmb3JtLWluZm8nO1xuZXhwb3J0IHsgUGxhdGZvcm1JbmZvTW9kdWxlIH07Il19

@@ -1,0 +1,62 @@
+{
+  "name": "@bit/orcid.angular.window",
+  "version": "0.0.3",
+  "homepage": "https://bit.dev/orcid/angular/window",
+  "main": "bundles/bit-orcid.angular.window.umd.js",
+  "dependencies": {
+    "tslib": "^1.9.0"
+  },
+  "devDependencies": {
+    "@angular/material": "^8.0.0",
+    "@angular/core": "^8.0.0",
+    "@angular/animations": "^8.0.0",
+    "@angular/common": "^8.0.0",
+    "@angular/cdk": "^8.0.0",
+    "@angular/forms": "^8.0.0",
+    "rxjs": "^6.0.0 "
+  },
+  "peerDependencies": {
+    "@angular/material": "^8.0.0",
+    "@angular/core": "^8.0.0",
+    "@angular/animations": "^8.0.0",
+    "@angular/common": "^8.0.0",
+    "@angular/cdk": "^8.0.0",
+    "@angular/forms": "^8.0.0",
+    "rxjs": "^6.0.0 "
+  },
+  "license": "SEE LICENSE IN LICENSE",
+  "bit": {
+    "env": {
+      "compiler": "bit.envs/compilers/angular@0.1.9"
+    },
+    "overrides": {
+      "dependencies": {
+        "@angular/material": "-",
+        "@angular/core": "-",
+        "@angular/animations": "-",
+        "@angular/common": "-",
+        "@angular/cdk": "-",
+        "@angular/forms": "-",
+        "rxjs": "-"
+      },
+      "peerDependencies": {
+        "@angular/material": "^8.0.0",
+        "@angular/core": "^8.0.0",
+        "@angular/animations": "^8.0.0",
+        "@angular/common": "^8.0.0",
+        "@angular/cdk": "^8.0.0",
+        "@angular/forms": "^8.0.0",
+        "rxjs": "^6.0.0 "
+      }
+    }
+  },
+  "es2015": "fesm2015/bit-orcid.angular.window.js",
+  "esm5": "esm5/bit-orcid.angular.window.js",
+  "esm2015": "esm2015/bit-orcid.angular.window.js",
+  "fesm5": "fesm5/bit-orcid.angular.window.js",
+  "fesm2015": "fesm2015/bit-orcid.angular.window.js",
+  "module": "fesm5/bit-orcid.angular.window.js",
+  "typings": "bit-orcid.angular.window.d.ts",
+  "metadata": "bit-orcid.angular.window.metadata.json",
+  "sideEffects": false
+}

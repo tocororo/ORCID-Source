@@ -1,0 +1,9 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+/**
+ * Generated bundle index. Do not edit.
+ */
+export { PlatformInfoService, PlatformInfoModule, BROWSERLIST_REGEXP } from './public_api';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiYml0LW9yY2lkLmFuZ3VsYXIucGxhdGZvcm0taW5mby5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0BiaXQvb3JjaWQuYW5ndWxhci5wbGF0Zm9ybS1pbmZvLyIsInNvdXJjZXMiOlsiYml0LW9yY2lkLmFuZ3VsYXIucGxhdGZvcm0taW5mby50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7O0FBSUEsNEVBQWMsY0FBYyxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiLyoqXG4gKiBHZW5lcmF0ZWQgYnVuZGxlIGluZGV4LiBEbyBub3QgZWRpdC5cbiAqL1xuXG5leHBvcnQgKiBmcm9tICcuL3B1YmxpY19hcGknO1xuIl19

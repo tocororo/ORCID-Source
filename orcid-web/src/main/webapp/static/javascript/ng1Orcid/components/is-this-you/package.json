@@ -1,9 +1,13 @@
 {
-  "name": "@bit/orcid.angular.is-this-you",
-  "version": "0.0.8",
+  "name": "orcid.angular.is-this-you",
+  "version": "0.0.26",
   "homepage": "https://bit.dev/orcid/angular/is-this-you",
   "main": "dist/is-this-you/bundles/bit-orcid.angular.is-this-you.umd.js",
-  "dependencies": {},
+  "dependencies": {
+    "@bit/orcid.angular.orcid-theme": "file:../orcid-theme",
+    "@bit/orcid.angular.platform-info": "file:../platform-info",
+    "@bit/orcid.angular.window": "file:../window"
+  },
   "devDependencies": {},
   "peerDependencies": {
     "@angular/material": "^8.0.0",
@@ -12,8 +16,7 @@
     "@angular/common": "^8.0.0",
     "@angular/cdk": "^8.0.0",
     "@angular/forms": "^8.0.0",
-    "rxjs": "^6.0.0 ",
-    "@bit/orcid.angular.window": "file:./window"
+    "rxjs": "^6.0.0 "
   },
   "license": "SEE LICENSE IN LICENSE",
   "bit": {
@@ -41,11 +44,11 @@
       }
     }
   },
-  "es2015": "dist\\types\\fesm2015\\bit-orcid.angular.types.js",
-  "esm5": "dist\\types\\esm5\\bit-orcid.angular.types.js",
-  "esm2015": "dist\\types\\esm2015\\bit-orcid.angular.types.js",
-  "fesm5": "dist\\types\\fesm5\\bit-orcid.angular.types.js",
-  "fesm2015": "dist\\types\\fesm2015\\bit-orcid.angular.types.js",
-  "module": "dist\\types\\fesm5\\bit-orcid.angular.types.js",
-  "typings": "dist\\types\\bit-orcid.angular.types.d.ts"
+  "es2015": "dist\\is-this-you\\fesm2015\\bit-orcid.angular.is-this-you.js",
+  "esm5": "dist\\is-this-you\\esm5\\bit-orcid.angular.is-this-you.js",
+  "esm2015": "dist\\is-this-you\\esm2015\\bit-orcid.angular.is-this-you.js",
+  "fesm5": "dist\\is-this-you\\fesm5\\bit-orcid.angular.is-this-you.js",
+  "fesm2015": "dist\\is-this-you\\fesm2015\\bit-orcid.angular.is-this-you.js",
+  "module": "dist\\is-this-you\\fesm5\\bit-orcid.angular.is-this-you.js",
+  "typings": "dist\\is-this-you\\bit-orcid.angular.is-this-you.d.ts"
 }

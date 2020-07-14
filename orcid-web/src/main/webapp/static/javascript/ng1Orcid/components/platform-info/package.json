@@ -1,6 +1,6 @@
 {
-  "name": "@bit/orcid.angular.platform-info",
-  "version": "0.0.8",
+  "name": "orcid.angular.platform-info",
+  "version": "0.0.7",
   "homepage": "https://bit.dev/orcid/angular/platform-info",
   "main": "dist/platform-info/bundles/bit-orcid.angular.platform-info.umd.js",
   "dependencies": {},
@@ -40,11 +40,11 @@
       }
     }
   },
-  "es2015": "dist\\types\\fesm2015\\bit-orcid.angular.types.js",
-  "esm5": "dist\\types\\esm5\\bit-orcid.angular.types.js",
-  "esm2015": "dist\\types\\esm2015\\bit-orcid.angular.types.js",
-  "fesm5": "dist\\types\\fesm5\\bit-orcid.angular.types.js",
-  "fesm2015": "dist\\types\\fesm2015\\bit-orcid.angular.types.js",
-  "module": "dist\\types\\fesm5\\bit-orcid.angular.types.js",
-  "typings": "dist\\types\\bit-orcid.angular.types.d.ts"
+  "es2015": "dist\\platform-info\\fesm2015\\bit-orcid.angular.platform-info.js",
+  "esm5": "dist\\platform-info\\esm5\\bit-orcid.angular.platform-info.js",
+  "esm2015": "dist\\platform-info\\esm2015\\bit-orcid.angular.platform-info.js",
+  "fesm5": "dist\\platform-info\\fesm5\\bit-orcid.angular.platform-info.js",
+  "fesm2015": "dist\\platform-info\\fesm2015\\bit-orcid.angular.platform-info.js",
+  "module": "dist\\platform-info\\fesm5\\bit-orcid.angular.platform-info.js",
+  "typings": "dist\\platform-info\\bit-orcid.angular.platform-info.d.ts"
 }

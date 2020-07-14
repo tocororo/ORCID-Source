@@ -1,0 +1,33 @@
+import { OnInit } from '@angular/core';
+import { PlatformInfoService } from '../platform-info/platform-info.service';
+import { MatDialogRef } from '@angular/material/dialog';
+export declare class IsThisYouComponent implements OnInit {
+    dialogRef: MatDialogRef<IsThisYouComponent>;
+    data: any;
+    private window;
+    titleLabel: string;
+    bodyLabel: string;
+    contactLabel: string;
+    firstNameLabel: string;
+    lastNameLabel: string;
+    affiliationsLabel: string;
+    dateCreatedLabel: string;
+    viewRecordLabel: string;
+    signinLabel: string;
+    continueLabel: string;
+    edge: any;
+    ie: any;
+    tabletOrHandset: any;
+    handset: any;
+    tablet: any;
+    desktop: any;
+    columns8: any;
+    columns12: any;
+    columns4: any;
+    constructor(_platformInfo: PlatformInfoService, dialogRef: MatDialogRef<IsThisYouComponent>, data: any, window: Window);
+    ngOnInit(): void;
+    setPlatformClasses(platformInfo: any): void;
+    goto(url: any): void;
+    gotoNewTab(id: any): void;
+    confirmRegistration(): void;
+}

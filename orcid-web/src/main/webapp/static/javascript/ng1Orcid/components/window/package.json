@@ -1,5 +1,5 @@
 {
-  "name": "@bit/orcid.angular.window",
+  "name": "orcid.angular.window",
   "version": "0.0.4",
   "homepage": "https://bit.dev/orcid/angular/window",
   "main": "dist/window/bundles/bit-orcid.angular.window.umd.js",
@@ -40,11 +40,11 @@
       }
     }
   },
-  "es2015": "dist\\types\\fesm2015\\bit-orcid.angular.types.js",
-  "esm5": "dist\\types\\esm5\\bit-orcid.angular.types.js",
-  "esm2015": "dist\\types\\esm2015\\bit-orcid.angular.types.js",
-  "fesm5": "dist\\types\\fesm5\\bit-orcid.angular.types.js",
-  "fesm2015": "dist\\types\\fesm2015\\bit-orcid.angular.types.js",
-  "module": "dist\\types\\fesm5\\bit-orcid.angular.types.js",
-  "typings": "dist\\types\\bit-orcid.angular.types.d.ts"
+  "es2015": "dist\\window\\fesm2015\\bit-orcid.angular.window.js",
+  "esm5": "dist\\window\\esm5\\bit-orcid.angular.window.js",
+  "esm2015": "dist\\window\\esm2015\\bit-orcid.angular.window.js",
+  "fesm5": "dist\\window\\fesm5\\bit-orcid.angular.window.js",
+  "fesm2015": "dist\\window\\fesm2015\\bit-orcid.angular.window.js",
+  "module": "dist\\window\\fesm5\\bit-orcid.angular.window.js",
+  "typings": "dist\\window\\bit-orcid.angular.window.d.ts"
 }

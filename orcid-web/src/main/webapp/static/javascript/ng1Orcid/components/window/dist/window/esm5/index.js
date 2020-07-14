@@ -1,0 +1,7 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+export { WINDOW, WindowRef, WINDOW_PROVIDERS } from './window.service';
+export { WindowModule } from './window.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9AYml0L29yY2lkLmFuZ3VsYXIud2luZG93LyIsInNvdXJjZXMiOlsiaW5kZXgudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7OztBQUFBLE9BQU8sRUFBRSxNQUFNLEVBQUUsU0FBUyxFQUFFLGdCQUFnQixFQUFFLE1BQU0sa0JBQWtCLENBQUE7QUFDdEUsT0FBTyxFQUFFLFlBQVksRUFBRSxNQUFNLGlCQUFpQixDQUFBIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0IHsgV0lORE9XLCBXaW5kb3dSZWYsIFdJTkRPV19QUk9WSURFUlMgfSBmcm9tICcuL3dpbmRvdy5zZXJ2aWNlJ1xyXG5leHBvcnQgeyBXaW5kb3dNb2R1bGUgfSBmcm9tICcuL3dpbmRvdy5tb2R1bGUnXHJcbiJdfQ==

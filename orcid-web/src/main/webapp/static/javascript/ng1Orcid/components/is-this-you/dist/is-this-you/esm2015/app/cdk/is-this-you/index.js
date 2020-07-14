@@ -1,0 +1,7 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+export { IsThisYouComponent } from './is-this-you.component';
+export { IsThisYouModule } from './is-this-you.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9AYml0L29yY2lkLmFuZ3VsYXIuaXMtdGhpcy15b3UvIiwic291cmNlcyI6WyJhcHAvY2RrL2lzLXRoaXMteW91L2luZGV4LnRzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs7QUFBQSxPQUFPLEVBQUUsa0JBQWtCLEVBQUUsTUFBTSx5QkFBeUIsQ0FBQTtBQUM1RCxPQUFPLEVBQUUsZUFBZSxFQUFFLE1BQU0sc0JBQXNCLENBQUEiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgeyBJc1RoaXNZb3VDb21wb25lbnQgfSBmcm9tICcuL2lzLXRoaXMteW91LmNvbXBvbmVudCdcclxuZXhwb3J0IHsgSXNUaGlzWW91TW9kdWxlIH0gZnJvbSAnLi9pcy10aGlzLXlvdS5tb2R1bGUnXHJcbiJdfQ==

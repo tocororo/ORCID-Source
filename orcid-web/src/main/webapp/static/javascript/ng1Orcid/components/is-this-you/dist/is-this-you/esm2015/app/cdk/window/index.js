@@ -1,0 +1,9 @@
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,constantProperty,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { WINDOW } from '@bit/orcid.angular.window';
+export { WINDOW };
+import { WindowModule } from '@bit/orcid.angular.window';
+export { WindowModule };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290Ijoibmc6Ly9AYml0L29yY2lkLmFuZ3VsYXIuaXMtdGhpcy15b3UvIiwic291cmNlcyI6WyJhcHAvY2RrL3dpbmRvdy9pbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLE1BQU0sRUFBRSxNQUFNLDJCQUEyQixDQUFDO0FBQ25ELE9BQU8sRUFBRSxNQUFNLEVBQUUsQ0FBQztBQUNsQixPQUFPLEVBQUUsWUFBWSxFQUFFLE1BQU0sMkJBQTJCLENBQUM7QUFDekQsT0FBTyxFQUFFLFlBQVksRUFBRSxDQUFDIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHsgV0lORE9XIH0gZnJvbSAnQGJpdC9vcmNpZC5hbmd1bGFyLndpbmRvdyc7XG5leHBvcnQgeyBXSU5ET1cgfTtcbmltcG9ydCB7IFdpbmRvd01vZHVsZSB9IGZyb20gJ0BiaXQvb3JjaWQuYW5ndWxhci53aW5kb3cnO1xuZXhwb3J0IHsgV2luZG93TW9kdWxlIH07Il19
