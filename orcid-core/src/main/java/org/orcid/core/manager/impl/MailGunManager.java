@@ -75,45 +75,48 @@ public class MailGunManager {
     
     public boolean sendEmail(String from, String to, String subject, String text, String html, boolean marketing) {
 
-        Client client = Client.create();
-        client.addFilter(new HTTPBasicAuthFilter("api", getApiKey()));
-
-        // determine correct api based off domain.
-        WebResource webResource = null;
-        String fromEmail = getFromEmail(from);
-        if(marketing)
-            webResource = client.resource(getMarketingApiUrl());
-        else if (fromEmail.endsWith("@verify.orcid.org"))
-            webResource = client.resource(getVerifyApiUrl());
-        else if (fromEmail.endsWith("@notify.orcid.org"))
-            webResource = client.resource(getNotifyApiUrl());
-        else
-            webResource = client.resource(getApiUrl());        
-        
-        MultivaluedMapImpl formData = new MultivaluedMapImpl();
-        formData.add("from", from);
-        formData.add("to", to);
-        formData.add("subject", subject);
-        formData.add("text", text);
-        if (html != null) {
-            formData.add("html", html);
-        }
-        formData.add("o:testmode", testmode);
-
-        // the filter is used to prevent sending email to users in qa and
-        // sandbox
-        if (to.matches(filter)) {
-            ClientResponse cr = webResource.type(MediaType.APPLICATION_FORM_URLENCODED).post(ClientResponse.class, formData);
-            if (cr.getStatus() != 200) {
-                LOGGER.warn("Post MailGunManager.sendEmail to {} not accepted\nstatus: {}\nbody: {}", 
-                        new Object[] { formData.get("to"), cr.getStatus(), cr.getEntity(String.class) });
-                return false;
-            }
-            return true;
-        } else {
-            LOGGER.debug("Email not sent to {} due to regex mismatch", formData.get("to"));
-            return false;
-        }
+            
+        //  no mailgun in tocororo....      
+        return true;
+//        Client client = Client.create();
+//        client.addFilter(new HTTPBasicAuthFilter("api", getApiKey()));
+//
+//        // determine correct api based off domain.
+//        WebResource webResource = null;
+//        String fromEmail = getFromEmail(from);
+//        if(marketing)
+//            webResource = client.resource(getMarketingApiUrl());
+//        else if (fromEmail.endsWith("@verify.orcid.org"))
+//            webResource = client.resource(getVerifyApiUrl());
+//        else if (fromEmail.endsWith("@notify.orcid.org"))
+//            webResource = client.resource(getNotifyApiUrl());
+//        else
+//            webResource = client.resource(getApiUrl());        
+//        
+//        MultivaluedMapImpl formData = new MultivaluedMapImpl();
+//        formData.add("from", from);
+//        formData.add("to", to);
+//        formData.add("subject", subject);
+//        formData.add("text", text);
+//        if (html != null) {
+//            formData.add("html", html);
+//        }
+//        formData.add("o:testmode", testmode);
+//
+//        // the filter is used to prevent sending email to users in qa and
+//        // sandbox
+//        if (to.matches(filter)) {
+//            ClientResponse cr = webResource.type(MediaType.APPLICATION_FORM_URLENCODED).post(ClientResponse.class, formData);
+//            if (cr.getStatus() != 200) {
+//                LOGGER.warn("Post MailGunManager.sendEmail to {} not accepted\nstatus: {}\nbody: {}", 
+//                        new Object[] { formData.get("to"), cr.getStatus(), cr.getEntity(String.class) });
+//                return false;
+//            }
+//            return true;
+//        } else {
+//            LOGGER.debug("Email not sent to {} due to regex mismatch", formData.get("to"));
+//            return false;
+//        }
     }
 
     public String getApiKey() {

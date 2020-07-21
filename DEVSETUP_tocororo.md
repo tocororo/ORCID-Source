@@ -1,4 +1,5 @@
 
+## Database setup
 
 CREATE DATABASE orcid;
 CREATE USER orcid WITH PASSWORD 'orcid'; 
@@ -21,6 +22,11 @@ GRANT ALL PRIVILEGES ON DATABASE message_listener to orcid;
 
 
 CREATE USER dw_user WITH PASSWORD 'dw_user';
+
+### note:
+Algo no funciono con los usuarios locales, una variante para el desarrollo es poner un superusuario para todas las bases de datos. 
+
+
 
 
 -Dorg.apache.tomcat.util.buf.UDecoder.ALLOW_ENCODED_SLASH=true -Dcom.mailgun.testmode=no -Dorg.orcid.message-listener.properties=classpath:message-listener.properties -Dorg.orcid.message-listener.development_mode=true -Dorg.orcid.activemq.config.file=classpath:orcid-activemq.properties -Dorg.orcid.persistence.messaging.enabled=true -Dorg.orcid.persistence.path="/Users/malayo/orcidmq"
